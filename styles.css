@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ffebee;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.home_container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-width: 750px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    bottom: 5rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2rem 2rem;
+    animation: fadeIn 2s forwards;
+}
+
+.home_container img{
+    width: 350px;
+    /*border: 1px solid red;*/
+    margin-bottom: 0px;
+    box-shadow: 0px 1px 5px 5px hsla(0, 0%, 0%, 0.13);
+    border-radius: 5px;
+}
+
+.home_container p{
+    font-weight: bold;
+    font-size: 50px;
+    /*border: 1px solid red;*/
+    margin: 10px 100px;
+}
+
+.heart{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+    animation: fadeInOut 1s linear infinite;
+}
+
+@keyframes fadeInOut {
+    0%,100%{
+        opacity: 0;
+    }
+    20%,80%{
+        opacity: 1;
+    }
+}
+
+.heart::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(heart_pic.png);
+    background-size: cover;
+    animation: moveShape 1s linear infinite;
+}
+
+@keyframes moveShape {
+    0%
+    {
+        transform: translate(0) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(300px) rotate(360deg);
+    }
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(34, 25, 25, 0.2);
+    animation: fadeIn 1s forwards;
+    transition: ease-in-out 0.3s;
+}
+
+h1 {
+    color: #d32f2f;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #d32f2f;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #b71c1c;
+}
+
+.hidden {
+    display: none;
+}
+
+#responseMessage {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #d32f2f;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
